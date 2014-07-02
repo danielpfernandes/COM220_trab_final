@@ -1,15 +1,63 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Main.publicacao;
 
-/**
- *
- * @author Daniel
- */
 public class Publicacao {
-    
+    private String titulo, autor, editora;
+    private int isbn;
+
+    /**
+     * @return the titulo
+     */
+    public String getTitulo() {
+        return titulo;
+    }
+
+    /**
+     * @param titulo the titulo to set
+     */
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    /**
+     * @return the autor
+     */
+    public String getAutor() {
+        return autor;
+    }
+
+    /**
+     * @param autor the autor to set
+     */
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    /**
+     * @return the editora
+     */
+    public String getEditora() {
+        return editora;
+    }
+
+    /**
+     * @param editora the editora to set
+     */
+    public void setEditora(String editora) {
+        this.editora = editora;
+    }
+
+
+    /**
+     * @return the isbn
+     */
+    public int getCodigo() {
+        return isbn;
+    }
+
+    /**
+     * @param codigo the isbn to set
+     */
+    public void setCodigo(int codigo) {
+        this.isbn = codigo;
+    }
 }
