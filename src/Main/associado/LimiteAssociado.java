@@ -4,12 +4,12 @@
  * and open the template in the editor.
  */
 
-package sistemaBiblioteca;
+package Main.associado;
 
 /**
  *
  * @author Daniel
  */
-public class LimiteEmprestimo {
+public class LimiteAssociado {
     
 }
