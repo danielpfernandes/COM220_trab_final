@@ -1,8 +1,8 @@
 package Main.publicacao;
 
 public class Publicacao {
-    private String titulo, autor, editora;
-    private int isbn;
+    private String titulo, autor, editora, isbn;
+    
 
     /**
      * @return the titulo
@@ -50,14 +50,14 @@ public class Publicacao {
     /**
      * @return the isbn
      */
-    public int getCodigo() {
+    public String getCodigo() {
         return isbn;
     }
 
     /**
      * @param codigo the isbn to set
      */
-    public void setCodigo(int codigo) {
+    public void setCodigo(String codigo) {
         this.isbn = codigo;
     }
 }

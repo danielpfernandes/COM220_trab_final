@@ -1,15 +1,62 @@
 package Main.emprestimo;
 
 import Main.BD.BD;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.sql.*;
 import java.text.SimpleDateFormat;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class ControleEmprestimo extends BD {
-
+    
+    private LimiteEmprestimo objALimEmprestimo = new LimiteEmprestimo();
+    private EntEmprestimo objAEntEmprestimo = new EntEmprestimo();
+    private String[] aDadosForm;
+    private Vector vecAEmprestimos = new Vector ();
     Statement stmt = getStmt();
+    
+    public ControleEmprestimo () throws Exception {
+        desserializaEmprestimo();
+    }
+    
+    public boolean cadEmprestimo () {
+        objAEntEmprestimo = new EntEmprestimo();
+        cadastra();
+        //TODO;
+        return true;
+    }
+    
+    private void cadastra () {
+        aDadosForm = objALimEmprestimo.montaForm();
+    }
+    
+    public void addVetor (EntEmprestimo pEst) {
+        vecAEmprestimos.add(pEst);
+    }
+    
+        private void serializaEmprestimo() throws Exception {
+        FileOutputStream objFileOS = new FileOutputStream("emprestimos.dat");
+        ObjectOutputStream objOS = new ObjectOutputStream(objFileOS);
+        objOS.writeObject(vecAEmprestimos);
+        objOS.flush();
+        objOS.close();
+    }
+        
+         private void desserializaEmprestimo() throws Exception {
+        File objFile = new File("emprestimos.dat");
+        if (objFile.exists()) {
+            FileInputStream objFileIS = new FileInputStream("emprestimo.dat");
+            ObjectInputStream objIS = new ObjectInputStream(objFileIS);
+            vecAEmprestimos = (Vector) objIS.readObject();
+            objIS.close();
+        }
+    }
 
     public void cadastrarEmprestimo(String codigoAss, String codigoLivro, java.sql.Date dataEmp) {
         try {
