@@ -73,7 +73,7 @@ public class ControlExemplar {
                 + "\n";
     }
 
-    //Método para obtenção das lista de disciplinas
+    //Método para obtenção das lista de exemplares
     public String ListaExemplars() {
         String result = "";
         EntExemplar objExemplar = null;

@@ -976,7 +976,7 @@ public class Principal extends javax.swing.JFrame {
         cardCadDevResultado.setVisible(false);
         cardCadEmprestimo.setVisible(false);
         cardCadDevolucao.setVisible(true);
-        jComboBoxNumeroExDevolucao.setModel(new javax.swing.DefaultComboBoxModel(ctrExem.getListaExemplar()));
+        jComboBoxNumeroExDevolucao.setModel(new javax.swing.DefaultComboBoxModel(ctrEmpres.ListaExemEmprestados()));
     }//GEN-LAST:event_btnDevolucaoActionPerformed
 
     private void btnConsultaDevolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaDevolActionPerformed

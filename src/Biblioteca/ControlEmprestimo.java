@@ -75,7 +75,7 @@ public class ControlEmprestimo {
                 + "\n";
     }
 
-    //Método para obtenção das lista de disciplinas
+    //Método para obtenção das lista de empréstimos
     public String ListaEmprestimos() {
         String result = "";
         EntEmprestimo objEmprestimo = null;
@@ -90,6 +90,16 @@ public class ControlEmprestimo {
         }
     }
     
+    public String[] ListaExemEmprestados() {
+        String result[] = new String[vecEmprestimos.size()];
+        EntEmprestimo objEmprestimo = null;
+        for (int intIdx = 0; intIdx < vecEmprestimos.size(); intIdx++) {
+            objEmprestimo = (EntEmprestimo) vecEmprestimos.elementAt(intIdx);
+            result[intIdx] = "Exemplar - Código:" + objEmprestimo.getNumexemplar() + " ISBN: " + objEmprestimo.getISBN();
+        }
+        return result;
+    }
+
     public String getEmprestimo(int associado) {
         EntEmprestimo objEmprestimo = null;
         for (int intIdx = 0; intIdx < vecEmprestimos.size(); intIdx++) {
