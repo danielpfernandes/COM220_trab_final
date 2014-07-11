@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Vector;
 import java.util.logging.Level;
@@ -12,15 +13,20 @@ import java.util.logging.Logger;
 
 public class ControlEmprestimo {
     
+    
+    public Date datadoemprestimo;
+    public int associadoqueemprestou;
     private EntEmprestimo emprestimo;
     private Vector vecEmprestimos = new Vector();
     private final String arquivo = "emprestimo.dat";
     
     private ControlPublicacao ctrPubli;
+    private ControlAssociado ctrAsso;
     
     
     public ControlEmprestimo() throws Exception {
         ctrPubli = new ControlPublicacao();
+        ctrAsso = new ControlAssociado();
         desserializaEmprestimo();
     }
     
@@ -90,16 +96,65 @@ public class ControlEmprestimo {
         }
     }
     
+    public void DeletarEmprestimo(int numero, int ISBN){
+    
+        EntEmprestimo objEmp = null;
+        for (int intIdx = 0; intIdx < vecEmprestimos.size(); intIdx++) {
+            objEmp = (EntEmprestimo) vecEmprestimos.elementAt(intIdx);
+            if (objEmp.getISBN() == ISBN && objEmp.getNumexemplar() == numero) {
+                
+                vecEmprestimos.remove(objEmp);
+                //estou alterado o status do exemplar
+                //Serializando para sobreescrever no arquivo
+                try {
+                    serializaEmprestimo();
+                } catch (Exception ex) {
+                    Logger.getLogger(ControlExemplar.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    
+    }
     public String[] ListaExemEmprestados() {
         String result[] = new String[vecEmprestimos.size()];
         EntEmprestimo objEmprestimo = null;
         for (int intIdx = 0; intIdx < vecEmprestimos.size(); intIdx++) {
             objEmprestimo = (EntEmprestimo) vecEmprestimos.elementAt(intIdx);
-            result[intIdx] = "Exemplar - Código:" + objEmprestimo.getNumexemplar() + " ISBN: " + objEmprestimo.getISBN();
+            result[intIdx] = "Exemplar - número: " + objEmprestimo.getNumexemplar() + " ISBN: " + objEmprestimo.getISBN();
         }
         return result;
     }
 
+    public void getInfo(int numero, int ISBN){
+        
+        EntEmprestimo objEmprestimo = null;
+        for (int intIdx = 0; intIdx < vecEmprestimos.size(); intIdx++) {
+            objEmprestimo = (EntEmprestimo) vecEmprestimos.elementAt(intIdx);
+            if (objEmprestimo.getNumexemplar() == numero && objEmprestimo.getISBN() == ISBN) {
+                datadoemprestimo = objEmprestimo.getDataemprestimo();
+                associadoqueemprestou = objEmprestimo.getCodassociado();
+            }
+        }
+    }
+    
+    
+    public float calculaMulta(int numero, int ISBN){
+        getInfo(numero, ISBN);
+        Date dataatual = new Date();  
+        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");  
+        formatador.format( dataatual );
+        int diasdediferença;
+        int tempoparaemprestimo = ctrAsso.tempoparaemprestimo(associadoqueemprestou);
+        diasdediferença = (int) ((dataatual.getTime() - datadoemprestimo.getTime()) / 86400000L);
+        
+        int total = diasdediferença-tempoparaemprestimo;
+        if(total>0){
+            return (float) (total*1.00);
+        }
+        return (float)(0*1.00);
+    }
+    
+    
     public String getEmprestimo(int associado) {
         EntEmprestimo objEmprestimo = null;
         for (int intIdx = 0; intIdx < vecEmprestimos.size(); intIdx++) {

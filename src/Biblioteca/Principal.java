@@ -164,6 +164,11 @@ public class Principal extends javax.swing.JFrame {
 
         jComboBoxStatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Grad (aluno de graduação)", "Posgrad (aluno de pós-graduação)", "Prof (professor)" }));
         jComboBoxStatus.setToolTipText("");
+        jComboBoxStatus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxStatusActionPerformed(evt);
+            }
+        });
 
         jButtonAssocSalvar.setText("Salvar");
         jButtonAssocSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -615,7 +620,7 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(jFormattedDataEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBoxAssociadoEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jLabel9))
-                .addContainerGap(223, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardCadEmprestimoLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnCadEmprestimo)
@@ -690,7 +695,7 @@ public class Principal extends javax.swing.JFrame {
                 .addComponent(jLabelTitDevolucao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jComboBoxNumeroExDevolucao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 231, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
                 .addComponent(btnConsultaDevol)
                 .addContainerGap())
         );
@@ -712,6 +717,11 @@ public class Principal extends javax.swing.JFrame {
         jLabelMulta.setText("Multa:");
 
         jButtonConfirmDevolucao.setText("Confirmar devolução");
+        jButtonConfirmDevolucao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonConfirmDevolucaoActionPerformed(evt);
+            }
+        });
 
         jLabelResDevExemplarNumero.setForeground(new java.awt.Color(0, 153, 0));
         jLabelResDevExemplarNumero.setText("1234");
@@ -816,7 +826,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(cardCadDevResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabelMulta)
                     .addComponent(jLabelVlMulta))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
                 .addComponent(jButtonConfirmDevolucao)
                 .addContainerGap())
         );
@@ -846,7 +856,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanelEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnEmprestimo)
                     .addComponent(btnDevolucao))
-                .addContainerGap(386, Short.MAX_VALUE))
+                .addContainerGap(369, Short.MAX_VALUE))
             .addGroup(jPanelEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelEmprestimoLayout.createSequentialGroup()
                     .addGap(42, 42, 42)
@@ -973,13 +983,42 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnEmprestimoActionPerformed
 
     private void btnDevolucaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDevolucaoActionPerformed
+        jComboBoxNumeroExDevolucao.setModel(new javax.swing.DefaultComboBoxModel(ctrEmpres.ListaExemEmprestados()));
         cardCadDevResultado.setVisible(false);
         cardCadEmprestimo.setVisible(false);
         cardCadDevolucao.setVisible(true);
-        jComboBoxNumeroExDevolucao.setModel(new javax.swing.DefaultComboBoxModel(ctrEmpres.ListaExemEmprestados()));
+       
     }//GEN-LAST:event_btnDevolucaoActionPerformed
 
     private void btnConsultaDevolActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultaDevolActionPerformed
+        //Vou devolver aqui
+        String valoresanteriores = (String) jComboBoxNumeroExDevolucao.getSelectedItem();
+        
+        int point2 = valoresanteriores.indexOf("I");
+        int point3 = valoresanteriores.indexOf("N:");
+        point3 += 3;
+        
+        String sub1 = valoresanteriores.substring(19, point2-1), sub2 = valoresanteriores.substring(point3);
+        
+        
+        int numeroexem = Integer.parseInt(sub1);
+        int isbnexem = Integer.parseInt(sub2);
+        
+        ctrEmpres.getInfo(numeroexem, isbnexem);
+        Date dataatual = new Date();  
+        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");  
+        formatador.format( dataatual );
+        
+        float multa = ctrEmpres.calculaMulta(numeroexem, isbnexem);
+        int dias = (int)(multa);
+        jLabel2.setText(ctrAsso.nomedoassociadoqueemprestou(ctrEmpres.associadoqueemprestou));
+        jLabelResDevExemplarNumero.setText(""+numeroexem);
+        jLabelDtDevolucao.setText(""+formatador.format( dataatual ));
+        jLabelDtEmprestimo.setText(""+formatador.format( ctrEmpres.datadoemprestimo));
+        jLabelTotalAtraso.setText(""+dias);
+        jLabelVlMulta.setText(""+multa);
+        
+        
         cardCadDevolucao.setVisible(false);
         cardCadEmprestimo.setVisible(false);
         cardCadDevResultado.setVisible(true);
@@ -1000,7 +1039,6 @@ public class Principal extends javax.swing.JFrame {
         int isbnexem = Integer.parseInt(isbn);
         jComboBoxNumeroExEmprestimo.setModel(new javax.swing.DefaultComboBoxModel(ctrExem.ListaExemplaresporISBN(isbnexem)));
         jComboBoxNumeroExEmprestimo.setToolTipText("");
-        jComboBoxNumeroExEmprestimo.setSelectedIndex(0);
     }//GEN-LAST:event_jComboBoxISBNEmprestimoActionPerformed
 
     private void CadExemplarYSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CadExemplarYSalvarActionPerformed
@@ -1054,6 +1092,8 @@ public class Principal extends javax.swing.JFrame {
         jFormattedDataEmprestimo.setText("");
 
         //alterar Exemplar
+        ctrExem.AlterarExemplar(Exemp, isbnexem, true);
+        System.out.println(ctrExem.ListaExemplars());
         //Validação
         JOptionPane.showMessageDialog(null, "Emprestimo realizado com sucesso!");
     }//GEN-LAST:event_btnCadEmprestimoActionPerformed
@@ -1080,6 +1120,30 @@ public class Principal extends javax.swing.JFrame {
         jComboBoxISBNEmprestimo.setModel(new javax.swing.DefaultComboBoxModel(ctrPubli.ListaISBNPublicacaos()));
         jComboBoxISBNEmprestimo.setToolTipText("");
     }//GEN-LAST:event_btnCadPublActionPerformed
+
+    private void jComboBoxStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxStatusActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxStatusActionPerformed
+
+    private void jButtonConfirmDevolucaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConfirmDevolucaoActionPerformed
+       String valoresanteriores = (String) jComboBoxNumeroExDevolucao.getSelectedItem();
+        
+        int point2 = valoresanteriores.indexOf("I");
+        int point3 = valoresanteriores.indexOf("N:");
+        point3 += 3;
+        
+        String sub1 = valoresanteriores.substring(19, point2-1), sub2 = valoresanteriores.substring(point3);
+        
+        
+        int numeroexem = Integer.parseInt(sub1);
+        int isbnexem = Integer.parseInt(sub2);
+        //alterar Exemplar
+        ctrExem.AlterarExemplar(numeroexem, isbnexem, false);
+        ctrEmpres.DeletarEmprestimo(numeroexem, isbnexem);
+        System.out.println(ctrExem.ListaExemplars());
+        //Validação
+        JOptionPane.showMessageDialog(null, "Devolução realizada com sucesso!");
+    }//GEN-LAST:event_jButtonConfirmDevolucaoActionPerformed
 
     /**
      * @param args the command line arguments

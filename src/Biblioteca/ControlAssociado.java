@@ -1,6 +1,5 @@
 package Biblioteca;
 
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -10,24 +9,23 @@ import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
 public class ControlAssociado {
+
     private EntAssociado associado;
     private String[] aDadosForm;
     private Vector vecAssociados = new Vector();
     private final String arquivo = "associado.dat";
-    
-    
+
     public ControlAssociado() throws Exception {
         desserializaAssociado();
     }
-    
-    public boolean CadastrarAssociado(int Codigo, String Nome, String Endereco, String Status, String Email){
+
+    public boolean CadastrarAssociado(int Codigo, String Nome, String Endereco, String Status, String Email) {
         associado = new EntAssociado(Codigo, Nome, Endereco, Status, Email);
         addVetor(associado);
-        return true;        
+        return true;
     }
-    
+
     public void addVetor(EntAssociado passo) {
         vecAssociados.add(passo);
         try {
@@ -62,6 +60,7 @@ public class ControlAssociado {
     public void finalize() throws Exception {
         serializaAssociado();
     }
+
     //*************************************************************************/
     ///LISTAGEM
     private String getAssociado(EntAssociado objPAssociado) {
@@ -87,15 +86,17 @@ public class ControlAssociado {
             return result;
         }
     }
+
     public String[] ListaCodeAssociado() {
         String vecAsso[] = new String[vecAssociados.size()];
         EntAssociado objAssociado = null;
         for (int intIdx = 0; intIdx < vecAssociados.size(); intIdx++) {
             objAssociado = (EntAssociado) vecAssociados.elementAt(intIdx);
-            vecAsso[intIdx] = ""+objAssociado.getCodigo() +" - "+objAssociado.getNome();
+            vecAsso[intIdx] = "" + objAssociado.getCodigo() + " - " + objAssociado.getNome();
         }
         return vecAsso;
     }
+
     public String getAssociado(int pCodigo) {
         EntAssociado objAssociado = null;
         for (int intIdx = 0; intIdx < vecAssociados.size(); intIdx++) {
@@ -106,5 +107,38 @@ public class ControlAssociado {
         }
         return "Não foi encontrada nenhuma associado com o código " + pCodigo + ".";
     }
-    
+
+    public int tempoparaemprestimo(int pCodigo) {
+        EntAssociado objAssociado = null;
+
+        String status;
+        for (int intIdx = 0; intIdx < vecAssociados.size(); intIdx++) {
+            objAssociado = (EntAssociado) vecAssociados.elementAt(intIdx);
+            if (objAssociado.getCodigo() == pCodigo) {
+                status = objAssociado.getStatus();
+                if (status.equals("Grad (aluno de graduação)")) {
+                    return 7;
+                }
+                if (status.equals("Posgrad (aluno de pós-graduação)")) {
+                    return 10;
+                }
+                if (status.equals("Prof (professor)")) {
+                    return 14;
+                }
+            }
+        }
+        return -1;
+    }
+    public String nomedoassociadoqueemprestou(int pCodigo) {
+        EntAssociado objAssociado = null;
+
+        for (int intIdx = 0; intIdx < vecAssociados.size(); intIdx++) {
+            objAssociado = (EntAssociado) vecAssociados.elementAt(intIdx);
+            if (objAssociado.getCodigo() == pCodigo) {
+                return objAssociado.getNome();
+            }
+        }
+        return "";
+    }
+
 }

@@ -28,6 +28,28 @@ public class ControlExemplar {
         return true;
     }
 
+    public void AlterarExemplar(int numero, int ISBN, boolean estaemprestando) {
+        EntExemplar objExemplar = null;
+        for (int intIdx = 0; intIdx < vecExemplars.size(); intIdx++) {
+            objExemplar = (EntExemplar) vecExemplars.elementAt(intIdx);
+            if (objExemplar.getISBN() == ISBN && objExemplar.getNumero() == numero) {
+                if (estaemprestando) {
+                    exemplar = new EntExemplar(objExemplar.getNumero(), objExemplar.getISBN(), objExemplar.getPreco(), true);
+                } else {
+                    exemplar = new EntExemplar(objExemplar.getNumero(), objExemplar.getISBN(), objExemplar.getPreco(), false);
+                }
+                vecExemplars.setElementAt(exemplar, intIdx);
+                //estou alterado o status do exemplar
+                //Serializando para sobreescrever no arquivo
+                try {
+                    serializaExemplar();
+                } catch (Exception ex) {
+                    Logger.getLogger(ControlExemplar.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+        }
+    }
+
     public void addVetor(EntExemplar pexem) {
         vecExemplars.add(pexem);
         try {
@@ -91,12 +113,19 @@ public class ControlExemplar {
     public String[] ListaExemplaresporISBN(int ISBN) {
         int c = 0;
         EntExemplar objExemplar = null;
-        String vecISBNexemplar[] = new String[UltimoExemplars(ISBN) - 1];
         for (int intIdx = 0; intIdx < vecExemplars.size(); intIdx++) {
             objExemplar = (EntExemplar) vecExemplars.elementAt(intIdx);
-            if (objExemplar.getISBN() == ISBN) {
-                int a= c+1;
-                vecISBNexemplar[c] = "" + a;
+            if (objExemplar.getISBN() == ISBN && objExemplar.isEmprestado() == false) {
+                c++;
+         }
+        }
+        String vecISBNexemplar[] = new String[c];
+         c=0;
+        for (int intIdx = 0; intIdx < vecExemplars.size(); intIdx++) {
+            objExemplar = (EntExemplar) vecExemplars.elementAt(intIdx);
+            if (objExemplar.getISBN() == ISBN && objExemplar.isEmprestado() == false) {
+                int a = c + 1;
+                vecISBNexemplar[c] = "" + objExemplar.getNumero();
                 c++;
             }
         }
