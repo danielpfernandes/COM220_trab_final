@@ -111,6 +111,16 @@ public class ControlPublicacao {
         }
         return "Não foi encontrada nenhuma publicacao com o isbn " + pISBN + ".";
     }
+    public String getNomePublicacao(int pISBN) {
+        EntPublicacao objPublicacao = null;
+        for (int intIdx = 0; intIdx < vecPublicacaos.size(); intIdx++) {
+            objPublicacao = (EntPublicacao) vecPublicacaos.elementAt(intIdx);
+            if (objPublicacao.getISBN() == pISBN) {
+                return objPublicacao.getTitulo();
+            }
+        }
+        return "Não foi encontrada nenhuma publicacao com o isbn " + pISBN + ".";
+    }
     
 }
 

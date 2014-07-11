@@ -12,30 +12,29 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ControlEmprestimo {
-    
-    
+
+    public Vector VecEmpresemAtraso;
     public Date datadoemprestimo;
     public int associadoqueemprestou;
     private EntEmprestimo emprestimo;
     private Vector vecEmprestimos = new Vector();
     private final String arquivo = "emprestimo.dat";
-    
+
     private ControlPublicacao ctrPubli;
     private ControlAssociado ctrAsso;
-    
-    
+
     public ControlEmprestimo() throws Exception {
         ctrPubli = new ControlPublicacao();
         ctrAsso = new ControlAssociado();
         desserializaEmprestimo();
     }
-    
-    public boolean CadastrarEmprestimo(int numexemplar, int ISBN, Date dataemprestimo, int codassociado){
+
+    public boolean CadastrarEmprestimo(int numexemplar, int ISBN, Date dataemprestimo, int codassociado) {
         emprestimo = new EntEmprestimo(numexemplar, ISBN, dataemprestimo, codassociado);
         addVetor(emprestimo);
-        return true;        
+        return true;
     }
-    
+
     public void addVetor(EntEmprestimo pexem) {
         vecEmprestimos.add(pexem);
         try {
@@ -72,7 +71,7 @@ public class ControlEmprestimo {
     }
     //*************************************************************************/
     ///LISTAGEM
-    
+
     private String getEmprestimo(EntEmprestimo objPEmprestimo) {
         return "Número exemplar: " + objPEmprestimo.getNumexemplar()
                 + "  ISBN: " + objPEmprestimo.getISBN()
@@ -95,14 +94,14 @@ public class ControlEmprestimo {
             return result;
         }
     }
-    
-    public void DeletarEmprestimo(int numero, int ISBN){
-    
+
+    public void DeletarEmprestimo(int numero, int ISBN) {
+
         EntEmprestimo objEmp = null;
         for (int intIdx = 0; intIdx < vecEmprestimos.size(); intIdx++) {
             objEmp = (EntEmprestimo) vecEmprestimos.elementAt(intIdx);
             if (objEmp.getISBN() == ISBN && objEmp.getNumexemplar() == numero) {
-                
+
                 vecEmprestimos.remove(objEmp);
                 //estou alterado o status do exemplar
                 //Serializando para sobreescrever no arquivo
@@ -113,8 +112,9 @@ public class ControlEmprestimo {
                 }
             }
         }
-    
+
     }
+
     public String[] ListaExemEmprestados() {
         String result[] = new String[vecEmprestimos.size()];
         EntEmprestimo objEmprestimo = null;
@@ -125,8 +125,50 @@ public class ControlEmprestimo {
         return result;
     }
 
-    public void getInfo(int numero, int ISBN){
-        
+    public void ListaAssociadosemAtraso() {
+        VecEmpresemAtraso = new Vector();
+        Date dataatual = new Date();
+        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+        formatador.format(dataatual);
+
+        int diasdediferença;
+        EntEmprestimo objEmprestimo = null;
+        for (int intIdx = 0; intIdx < vecEmprestimos.size(); intIdx++) {
+            objEmprestimo = (EntEmprestimo) vecEmprestimos.elementAt(intIdx);
+            diasdediferença = (int) ((dataatual.getTime() - objEmprestimo.getDataemprestimo().getTime()) / 86400000L);
+            int tempoparaemprestimo = ctrAsso.tempoparaemprestimo(objEmprestimo.getCodassociado());
+            int total = diasdediferença - tempoparaemprestimo;
+            if (total > 0) {
+                VecEmpresemAtraso.add(objEmprestimo);
+            }
+        }
+    }
+
+    public String RelatorioAssociadosAtrasado() {
+        ListaAssociadosemAtraso();
+        String resultado = "";
+        EntEmprestimo objEmprestimo = null;
+
+        for (int intIdx = 0; intIdx < VecEmpresemAtraso.size(); intIdx++) {
+            objEmprestimo = (EntEmprestimo) VecEmpresemAtraso.elementAt(intIdx);
+            resultado += "<br>Associado: " + objEmprestimo.getCodassociado();
+            resultado += " - " + ctrAsso.nomedoassociadoqueemprestou(objEmprestimo.getCodassociado());
+            //int codas = objEmprestimo.getCodassociado();
+            //EntEmprestimo objEmprestimo2 = null;
+           // for (int a = 0; a < VecEmpresemAtraso.size(); a++) {
+              //  if (objEmprestimo2.getCodassociado() == codas) {
+                    //objEmprestimo2 = (EntEmprestimo) VecEmpresemAtraso.elementAt(a);
+                    resultado += "<br>Publicação(ões) em atraso<br>" + objEmprestimo.getISBN();
+                    resultado += " - " + ctrPubli.getNomePublicacao(objEmprestimo.getISBN())+"<br>";
+                  //  VecEmpresemAtraso.remove(a);
+                //}
+            //}
+        }
+        return resultado;
+    }
+
+    public void getInfo(int numero, int ISBN) {
+
         EntEmprestimo objEmprestimo = null;
         for (int intIdx = 0; intIdx < vecEmprestimos.size(); intIdx++) {
             objEmprestimo = (EntEmprestimo) vecEmprestimos.elementAt(intIdx);
@@ -136,25 +178,23 @@ public class ControlEmprestimo {
             }
         }
     }
-    
-    
-    public float calculaMulta(int numero, int ISBN){
+
+    public float calculaMulta(int numero, int ISBN) {
         getInfo(numero, ISBN);
-        Date dataatual = new Date();  
-        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");  
-        formatador.format( dataatual );
+        Date dataatual = new Date();
+        SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+        formatador.format(dataatual);
         int diasdediferença;
         int tempoparaemprestimo = ctrAsso.tempoparaemprestimo(associadoqueemprestou);
         diasdediferença = (int) ((dataatual.getTime() - datadoemprestimo.getTime()) / 86400000L);
-        
-        int total = diasdediferença-tempoparaemprestimo;
-        if(total>0){
-            return (float) (total*1.00);
+
+        int total = diasdediferença - tempoparaemprestimo;
+        if (total > 0) {
+            return (float) (total * 1.00);
         }
-        return (float)(0*1.00);
+        return (float) (0 * 1.00);
     }
-    
-    
+
     public String getEmprestimo(int associado) {
         EntEmprestimo objEmprestimo = null;
         for (int intIdx = 0; intIdx < vecEmprestimos.size(); intIdx++) {
@@ -163,7 +203,7 @@ public class ControlEmprestimo {
                 return getEmprestimo(objEmprestimo);
             }
         }
-        return "Não foi encontrada nenhuma emprestimo com o associado " + associado+".";
+        return "Não foi encontrada nenhuma emprestimo com o associado " + associado + ".";
     }
-    
+
 }
