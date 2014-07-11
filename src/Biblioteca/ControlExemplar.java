@@ -10,27 +10,24 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ControlExemplar {
-    
 
     private EntExemplar exemplar;
     private Vector vecExemplars = new Vector();
     private final String arquivo = "exemplar.dat";
-    
+
     private ControlPublicacao ctrPubli;
-   
-    
-    
+
     public ControlExemplar() throws Exception {
         ctrPubli = new ControlPublicacao();
         desserializaExemplar();
     }
-    
-    public boolean CadastrarExemplar(int numero, int ISBN, float preco, boolean emprestado){
+
+    public boolean CadastrarExemplar(int numero, int ISBN, float preco, boolean emprestado) {
         exemplar = new EntExemplar(numero, ISBN, preco, emprestado);
         addVetor(exemplar);
-        return true;        
+        return true;
     }
-    
+
     public void addVetor(EntExemplar pexem) {
         vecExemplars.add(pexem);
         try {
@@ -67,7 +64,7 @@ public class ControlExemplar {
     }
     //*************************************************************************/
     ///LISTAGEM
-    
+
     private String getExemplar(EntExemplar objPExemplar) {
         return "Número: " + objPExemplar.getNumero()
                 + "  ISBN: " + objPExemplar.getISBN()
@@ -90,27 +87,47 @@ public class ControlExemplar {
             return result;
         }
     }
-    
-    public String ListaExemplarsISBNEmprestadosENaoEmprestados(int ISBN) {
+
+    public int UltimoExemplars(int ISBN) {
         EntExemplar objExemplar = null;
-        String emprestados = ctrPubli.getPublicacao(ISBN);
-        
-        
-        String sim = "", nao ="";
+        int cont = 1;
         for (int intIdx = 0; intIdx < vecExemplars.size(); intIdx++) {
             objExemplar = (EntExemplar) vecExemplars.elementAt(intIdx);
-            if(objExemplar.getISBN() == ISBN){
-                if(objExemplar.isEmprestado()){
-                    sim += "Número: "+ objExemplar.getNumero() + "Preço: "+ objExemplar.getPreco();
-                }else{
-                        nao += "Número: "+ objExemplar.getNumero() + "Preço: "+ objExemplar.getPreco();
+            if (objExemplar.getISBN() == ISBN) {
+                cont++;
+            }
+        }
+        return cont;
+    }
+
+    public String ListaExemplarsISBNEmprestadosENaoEmprestados(int ISBN) {
+        EntExemplar objExemplar = null;
+        String emprestados = "<html>"+ctrPubli.getPublicacao(ISBN)+"<br>";
+
+        String sim = "", nao = "";
+        for (int intIdx = 0; intIdx < vecExemplars.size(); intIdx++) {
+            objExemplar = (EntExemplar) vecExemplars.elementAt(intIdx);
+            if (objExemplar.getISBN() == ISBN) {
+                if (objExemplar.isEmprestado()) {
+                    sim += "<br>Número: " + objExemplar.getNumero() + " - Preço: " + objExemplar.getPreco();
+                } else {
+                    nao += "<br>Número: " + objExemplar.getNumero() + " - Preço: " + objExemplar.getPreco();
                 }
             }
         }
-        emprestados += "\nEMPRESTADOS:\n"+sim+"\nDISPONÍVEIS:\n"+nao;
-        return emprestados;
+        if(sim.equals("") && nao.equals("")){
+             emprestados += "<br>Essa publicação não possui exemplares cadastrados!<br>";
+        }
+        else if (sim.equals("")){
+            emprestados += "\n<br><br>DISPONÍVEIS: \n" + nao;
+        } else if (nao.equals("")){
+            emprestados += "\n<br><br>EMPRESTADOS: \n" + sim;
+        }else{
+            emprestados += "\n<br><br>DISPONÍVEIS: \n" + nao +  "\n<br><br>EMPRESTADOS: \n" + sim;
+        }
+
+        return emprestados+"</html>";
     }
-    
 
     public String getExemplar(int pISBN, int pNumero) {
         EntExemplar objExemplar = null;
@@ -120,7 +137,7 @@ public class ControlExemplar {
                 return getExemplar(objExemplar);
             }
         }
-        return "Não foi encontrada nenhuma exemplar com o ISBN " + pISBN+" e numero"+pNumero + ".";
+        return "Não foi encontrada nenhuma exemplar com o ISBN " + pISBN + " e numero" + pNumero + ".";
     }
-    
+
 }

@@ -70,10 +70,10 @@ public class ControlPublicacao {
     private String getPublicacao(EntPublicacao objPPublicacao) {
 
         
-        return "\nISBN: " + objPPublicacao.getISBN()
-                + "  \nTitulo: " + objPPublicacao.getTitulo()
-                + "  \nAutor: " + objPPublicacao.getAutor()
-                + "  \nEditora: " + objPPublicacao.getEditora()
+        return "\n ISBN: " + objPPublicacao.getISBN()
+                + "  \n Titulo: " + objPPublicacao.getTitulo()
+                + "  \n Autor: " + objPPublicacao.getAutor()
+                + "  \n Editora: " + objPPublicacao.getEditora()
                 + "\n";
     }
 

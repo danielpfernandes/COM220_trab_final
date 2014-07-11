@@ -144,6 +144,7 @@ public class Principal extends javax.swing.JFrame {
 
         jComboBoxStatus.setModel(new javax.swing.DefaultComboBoxModel(new String[]{"Grad (aluno de graduação)", "Posgrad (aluno de pós-graduação)", "Prof (professor)"}));
         jComboBoxStatus.setToolTipText("");
+        jComboBoxStatus.setSelectedIndex(0);
 
         jButtonAssocSalvar.setText("Salvar");
         jButtonAssocSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -422,7 +423,7 @@ public class Principal extends javax.swing.JFrame {
         jComboBoxISBNExemplar.setToolTipText("");
         jComboBoxISBNExemplar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBoxStatusActionPerformed(evt);
+                jComboBoxISBNExemplarActionPerformed(evt);
             }
         });
 
@@ -432,10 +433,15 @@ public class Principal extends javax.swing.JFrame {
 
         btnCadPubl1.setText("Cadastrar");
         
-        jLabelNumeroExemplar.setText("Número da publicação");
+        jLabelNumeroExemplar.setText("-");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel8.setText("Cadastro de Exemplar");
+        btnCadPubl1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CadExemplarYSalvarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout cardCadExemplarLayout = new javax.swing.GroupLayout(cardCadExemplar);
         cardCadExemplar.setLayout(cardCadExemplarLayout);
@@ -933,8 +939,14 @@ public class Principal extends javax.swing.JFrame {
         jComboBoxISBNExemplar.setToolTipText("");
     }
     
-    private void jComboBoxStatusActionPerformed(ActionEvent evt) {
-        //Gerar o código do ultimo + 1.
+    private void jComboBoxISBNExemplarActionPerformed(ActionEvent evt) {
+        
+        String isbn = (String) jComboBoxISBNExemplar.getSelectedItem();
+        isbn = isbn.substring(0, isbn.indexOf(" -"));
+
+        int isbnexem = Integer.parseInt(isbn);
+        jLabelNumeroExemplar.setText(""+ctrExem.UltimoExemplars(isbnexem));
+        
     }
 
     private void CadExemplarYSalvarActionPerformed(ActionEvent evt) {
