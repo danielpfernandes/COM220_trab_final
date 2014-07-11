@@ -148,21 +148,26 @@ public class ControlEmprestimo {
         ListaAssociadosemAtraso();
         String resultado = "";
         EntEmprestimo objEmprestimo = null;
+        //for(int intIdx = 0; intIdx < VecEmpresemAtraso.size(); intIdx++)
 
         for (int intIdx = 0; intIdx < VecEmpresemAtraso.size(); intIdx++) {
             objEmprestimo = (EntEmprestimo) VecEmpresemAtraso.elementAt(intIdx);
-            resultado += "<br>Associado: " + objEmprestimo.getCodassociado();
+            resultado += "<br><b>Associado:</b> " + objEmprestimo.getCodassociado();
             resultado += " - " + ctrAsso.nomedoassociadoqueemprestou(objEmprestimo.getCodassociado());
-            //int codas = objEmprestimo.getCodassociado();
-            //EntEmprestimo objEmprestimo2 = null;
-           // for (int a = 0; a < VecEmpresemAtraso.size(); a++) {
-              //  if (objEmprestimo2.getCodassociado() == codas) {
-                    //objEmprestimo2 = (EntEmprestimo) VecEmpresemAtraso.elementAt(a);
-                    resultado += "<br>Publicação(ões) em atraso<br>" + objEmprestimo.getISBN();
-                    resultado += " - " + ctrPubli.getNomePublicacao(objEmprestimo.getISBN())+"<br>";
-                  //  VecEmpresemAtraso.remove(a);
-                //}
-            //}
+            resultado += "<br><b>Publicação(ões) em atraso</b><br>";
+            final int codas = objEmprestimo.getCodassociado();
+            EntEmprestimo objEmprestimo2 = null;
+            resultado += "ISBN: " + objEmprestimo.getISBN();
+            resultado += " Nº " + objEmprestimo.getNumexemplar() + " - " + ctrPubli.getNomePublicacao(objEmprestimo.getISBN()) + "<br>";
+
+            for (int a = intIdx+1; a < VecEmpresemAtraso.size(); a++) {
+                objEmprestimo2 = (EntEmprestimo) VecEmpresemAtraso.elementAt(a);
+                if (objEmprestimo2.getCodassociado() == codas) {
+                    resultado += "ISBN: " + objEmprestimo.getISBN();
+                    resultado += " Nº " + objEmprestimo.getNumexemplar() + " - " + ctrPubli.getNomePublicacao(objEmprestimo.getISBN()) + "<br>";
+                    VecEmpresemAtraso.remove(a);
+                }
+            }
         }
         return resultado;
     }
