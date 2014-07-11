@@ -31,7 +31,7 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
     }
 
-   @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -134,24 +134,16 @@ public class Principal extends javax.swing.JFrame {
 
         labelCodigo.setText("Código");
 
-        
-
         jLabelNome.setText("Nome");
-
-        
 
         jLabelEndereco.setText("Endereço");
 
-        
         jLabelEmail.setText("E-mail");
-
-        
 
         jLabelSatus.setText("Status");
 
-        jComboBoxStatus.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Grad (aluno de graduação)", "Posgrad (aluno de pós-graduação)", "Prof (professor)" }));
+        jComboBoxStatus.setModel(new javax.swing.DefaultComboBoxModel(new String[]{"Grad (aluno de graduação)", "Posgrad (aluno de pós-graduação)", "Prof (professor)"}));
         jComboBoxStatus.setToolTipText("");
-        
 
         jButtonAssocSalvar.setText("Salvar");
         jButtonAssocSalvar.addActionListener(new java.awt.event.ActionListener() {
@@ -166,72 +158,72 @@ public class Principal extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanelAssociadoLayout = new javax.swing.GroupLayout(jPanelAssociado);
         jPanelAssociado.setLayout(jPanelAssociadoLayout);
         jPanelAssociadoLayout.setHorizontalGroup(
-            jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelAssociadoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelAssociadoLayout.createSequentialGroup()
+                jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAssociadoLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelAssociadoLayout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAssociadoLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButtonAssocSalvar))
-                            .addGroup(jPanelAssociadoLayout.createSequentialGroup()
-                                .addComponent(jLabelNome)
-                                .addGap(36, 36, 36)
-                                .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 211, Short.MAX_VALUE)))
-                        .addContainerGap())
-                    .addGroup(jPanelAssociadoLayout.createSequentialGroup()
-                        .addGroup(jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelAssociadoLayout.createSequentialGroup()
-                                .addComponent(labelCodigo)
-                                .addGap(30, 30, 30)
-                                .addComponent(jTextFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelAssociadoLayout.createSequentialGroup()
-                                .addComponent(jLabelEndereco)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanelAssociadoLayout.createSequentialGroup()
-                                .addGroup(jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelSatus)
-                                    .addComponent(jLabelEmail))
-                                .addGap(32, 32, 32)
-                                .addGroup(jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBoxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addGroup(jPanelAssociadoLayout.createSequentialGroup()
+                                        .addGroup(jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(jPanelAssociadoLayout.createSequentialGroup()
+                                                        .addComponent(jLabel4)
+                                                        .addGap(0, 0, Short.MAX_VALUE))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelAssociadoLayout.createSequentialGroup()
+                                                        .addGap(0, 0, Short.MAX_VALUE)
+                                                        .addComponent(jButtonAssocSalvar))
+                                                .addGroup(jPanelAssociadoLayout.createSequentialGroup()
+                                                        .addComponent(jLabelNome)
+                                                        .addGap(36, 36, 36)
+                                                        .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(0, 211, Short.MAX_VALUE)))
+                                        .addContainerGap())
+                                .addGroup(jPanelAssociadoLayout.createSequentialGroup()
+                                        .addGroup(jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(jPanelAssociadoLayout.createSequentialGroup()
+                                                        .addComponent(labelCodigo)
+                                                        .addGap(30, 30, 30)
+                                                        .addComponent(jTextFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(jPanelAssociadoLayout.createSequentialGroup()
+                                                        .addComponent(jLabelEndereco)
+                                                        .addGap(18, 18, 18)
+                                                        .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(jPanelAssociadoLayout.createSequentialGroup()
+                                                        .addGroup(jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addComponent(jLabelSatus)
+                                                                .addComponent(jLabelEmail))
+                                                        .addGap(32, 32, 32)
+                                                        .addGroup(jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jComboBoxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         jPanelAssociadoLayout.setVerticalGroup(
-            jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelAssociadoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4)
-                .addGap(18, 18, 18)
-                .addGroup(jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelCodigo)
-                    .addComponent(jTextFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNome)
-                    .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelEndereco))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelEmail)
-                    .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelSatus)
-                    .addComponent(jComboBoxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
-                .addComponent(jButtonAssocSalvar)
-                .addContainerGap())
+                jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelAssociadoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(labelCodigo)
+                                .addComponent(jTextFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabelNome)
+                                .addComponent(jTextFieldNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabelEndereco))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabelEmail)
+                                .addComponent(jTextFieldEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanelAssociadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabelSatus)
+                                .addComponent(jComboBoxStatus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 148, Short.MAX_VALUE)
+                        .addComponent(jButtonAssocSalvar)
+                        .addContainerGap())
         );
 
         jTabbedPanePrincipal.addTab("Associado", jPanelAssociado);
@@ -269,24 +261,24 @@ public class Principal extends javax.swing.JFrame {
         javax.swing.GroupLayout cardConsPublResultadoLayout = new javax.swing.GroupLayout(cardConsPublResultado);
         cardConsPublResultado.setLayout(cardConsPublResultadoLayout);
         cardConsPublResultadoLayout.setHorizontalGroup(
-            cardConsPublResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cardConsPublResultadoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(cardConsPublResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cardConsPublResultadoLayout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jLabelExemplaresEmprestadoseNaoEmprestados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                cardConsPublResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(cardConsPublResultadoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(cardConsPublResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(cardConsPublResultadoLayout.createSequentialGroup()
+                                        .addComponent(jLabel7)
+                                        .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(jLabelExemplaresEmprestadoseNaoEmprestados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
         );
         cardConsPublResultadoLayout.setVerticalGroup(
-            cardConsPublResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cardConsPublResultadoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7)
-                .addGap(18, 18, 18)
-                .addComponent(jLabelExemplaresEmprestadoseNaoEmprestados, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                cardConsPublResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(cardConsPublResultadoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel7)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelExemplaresEmprestadoseNaoEmprestados, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
         );
 
         cardPublicacao.add(cardConsPublResultado, "SHOW_PANEL");
@@ -302,41 +294,41 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jComboBoxISBNConsultar.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
+        jComboBoxISBNConsultar.setModel(new javax.swing.DefaultComboBoxModel(ctrPubli.ListaISBNPublicacaos()));
+        jComboBoxISBNConsultar.setToolTipText("");
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel6.setText("Consulta de Publicação");
 
         javax.swing.GroupLayout cardConsPublicacaoLayout = new javax.swing.GroupLayout(cardConsPublicacao);
         cardConsPublicacao.setLayout(cardConsPublicacaoLayout);
         cardConsPublicacaoLayout.setHorizontalGroup(
-            cardConsPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cardConsPublicacaoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(cardConsPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardConsPublicacaoLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnConsultaPubl))
-                    .addComponent(jComboBoxISBNConsultar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(cardConsPublicacaoLayout.createSequentialGroup()
+                cardConsPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(cardConsPublicacaoLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(cardConsPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabelTitleConsPub))
-                        .addGap(0, 293, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardConsPublicacaoLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(btnConsultaPubl))
+                                .addComponent(jComboBoxISBNConsultar, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(cardConsPublicacaoLayout.createSequentialGroup()
+                                        .addGroup(cardConsPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel6)
+                                                .addComponent(jLabelTitleConsPub))
+                                        .addGap(0, 293, Short.MAX_VALUE)))
+                        .addContainerGap())
         );
         cardConsPublicacaoLayout.setVerticalGroup(
-            cardConsPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cardConsPublicacaoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelTitleConsPub)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBoxISBNConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
-                .addComponent(btnConsultaPubl)
-                .addContainerGap())
+                cardConsPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(cardConsPublicacaoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabelTitleConsPub)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBoxISBNConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
+                        .addComponent(btnConsultaPubl)
+                        .addContainerGap())
         );
 
         cardPublicacao.add(cardConsPublicacao, "SHOW_PANEL");
@@ -345,20 +337,18 @@ public class Principal extends javax.swing.JFrame {
 
         lblEditora.setText("Editora");
 
-        
         lblISBN.setText("ISBN");
-
-        
 
         lblTitulo.setText("Título");
 
-        
-
         jLabelAutor.setText("Autor");
 
-        
-
         btnCadPubl.setText("Cadastrar");
+        btnCadPubl.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadPublActionPerformed(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel5.setText("Cadastro de Publicação");
@@ -366,60 +356,60 @@ public class Principal extends javax.swing.JFrame {
         javax.swing.GroupLayout cardCadPublicacaoLayout = new javax.swing.GroupLayout(cardCadPublicacao);
         cardCadPublicacao.setLayout(cardCadPublicacaoLayout);
         cardCadPublicacaoLayout.setHorizontalGroup(
-            cardCadPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cardCadPublicacaoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(cardCadPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardCadPublicacaoLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnCadPubl))
-                    .addGroup(cardCadPublicacaoLayout.createSequentialGroup()
+                cardCadPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(cardCadPublicacaoLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(cardCadPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(cardCadPublicacaoLayout.createSequentialGroup()
-                                .addComponent(lblISBN)
-                                .addGap(29, 29, 29)
-                                .addComponent(jTextFieldISBN, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel5)
-                            .addGroup(cardCadPublicacaoLayout.createSequentialGroup()
-                                .addComponent(lblTitulo)
-                                .addGap(26, 26, 26)
-                                .addComponent(jTextFieldTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(cardCadPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardCadPublicacaoLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(btnCadPubl))
                                 .addGroup(cardCadPublicacaoLayout.createSequentialGroup()
-                                    .addComponent(jLabelAutor)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextFieldAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(cardCadPublicacaoLayout.createSequentialGroup()
-                                    .addComponent(lblEditora)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jTextFieldEditora, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 236, Short.MAX_VALUE)))
-                .addContainerGap())
+                                        .addGroup(cardCadPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(cardCadPublicacaoLayout.createSequentialGroup()
+                                                        .addComponent(lblISBN)
+                                                        .addGap(29, 29, 29)
+                                                        .addComponent(jTextFieldISBN, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(jLabel5)
+                                                .addGroup(cardCadPublicacaoLayout.createSequentialGroup()
+                                                        .addComponent(lblTitulo)
+                                                        .addGap(26, 26, 26)
+                                                        .addComponent(jTextFieldTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(cardCadPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                        .addGroup(cardCadPublicacaoLayout.createSequentialGroup()
+                                                                .addComponent(jLabelAutor)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addComponent(jTextFieldAutor, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(cardCadPublicacaoLayout.createSequentialGroup()
+                                                                .addComponent(lblEditora)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(jTextFieldEditora, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addGap(0, 236, Short.MAX_VALUE)))
+                        .addContainerGap())
         );
         cardCadPublicacaoLayout.setVerticalGroup(
-            cardCadPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cardCadPublicacaoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5)
-                .addGap(18, 18, 18)
-                .addGroup(cardCadPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblISBN)
-                    .addComponent(jTextFieldISBN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(cardCadPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTitulo)
-                    .addComponent(jTextFieldTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(cardCadPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelAutor))
-                .addGap(18, 18, 18)
-                .addGroup(cardCadPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEditora)
-                    .addComponent(jTextFieldEditora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
-                .addComponent(btnCadPubl)
-                .addContainerGap())
+                cardCadPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(cardCadPublicacaoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addGroup(cardCadPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblISBN)
+                                .addComponent(jTextFieldISBN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(cardCadPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblTitulo)
+                                .addComponent(jTextFieldTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(cardCadPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jTextFieldAutor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabelAutor))
+                        .addGap(18, 18, 18)
+                        .addGroup(cardCadPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblEditora)
+                                .addComponent(jTextFieldEditora, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
+                        .addComponent(btnCadPubl)
+                        .addContainerGap())
         );
 
         cardPublicacao.add(cardCadPublicacao, "FORM_PANEL");
@@ -428,13 +418,20 @@ public class Principal extends javax.swing.JFrame {
 
         jLabellISBN1.setText("ISBN");
 
-        lblTitulo1.setText("Número");
+        jComboBoxISBNExemplar.setModel(new javax.swing.DefaultComboBoxModel(ctrPubli.ListaISBNPublicacaos()));
+        jComboBoxISBNExemplar.setToolTipText("");
+        jComboBoxISBNExemplar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxStatusActionPerformed(evt);
+            }
+        });
+
+        lblTitulo1.setText("Nùmero");
 
         jLabelAutor1.setText("Preço");
 
-        
         btnCadPubl1.setText("Cadastrar");
-
+        
         jLabelNumeroExemplar.setText("Número da publicação");
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
@@ -443,49 +440,49 @@ public class Principal extends javax.swing.JFrame {
         javax.swing.GroupLayout cardCadExemplarLayout = new javax.swing.GroupLayout(cardCadExemplar);
         cardCadExemplar.setLayout(cardCadExemplarLayout);
         cardCadExemplarLayout.setHorizontalGroup(
-            cardCadExemplarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cardCadExemplarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(cardCadExemplarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardCadExemplarLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnCadPubl1))
-                    .addGroup(cardCadExemplarLayout.createSequentialGroup()
+                cardCadExemplarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(cardCadExemplarLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(cardCadExemplarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabellISBN1)
-                            .addGroup(cardCadExemplarLayout.createSequentialGroup()
-                                .addGroup(cardCadExemplarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelAutor1))
-                                .addGap(15, 15, 15)
-                                .addGroup(cardCadExemplarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldPrecoExemplar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelNumeroExemplar)
-                                    .addComponent(jComboBoxISBNExemplar, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 231, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardCadExemplarLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(btnCadPubl1))
+                                .addGroup(cardCadExemplarLayout.createSequentialGroup()
+                                        .addGroup(cardCadExemplarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel8)
+                                                .addComponent(jLabellISBN1)
+                                                .addGroup(cardCadExemplarLayout.createSequentialGroup()
+                                                        .addGroup(cardCadExemplarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addComponent(lblTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jLabelAutor1))
+                                                        .addGap(15, 15, 15)
+                                                        .addGroup(cardCadExemplarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                                .addComponent(jTextFieldPrecoExemplar, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jLabelNumeroExemplar, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(jComboBoxISBNExemplar, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addGap(0, 231, Short.MAX_VALUE)))
+                        .addContainerGap())
         );
         cardCadExemplarLayout.setVerticalGroup(
-            cardCadExemplarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cardCadExemplarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8)
-                .addGap(18, 18, 18)
-                .addGroup(cardCadExemplarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabellISBN1)
-                    .addComponent(jComboBoxISBNExemplar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(cardCadExemplarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelNumeroExemplar)
-                    .addComponent(lblTitulo1))
-                .addGap(18, 18, 18)
-                .addGroup(cardCadExemplarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelAutor1)
-                    .addComponent(jTextFieldPrecoExemplar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
-                .addComponent(btnCadPubl1)
-                .addContainerGap())
+                cardCadExemplarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(cardCadExemplarLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel8)
+                        .addGap(18, 18, 18)
+                        .addGroup(cardCadExemplarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabellISBN1)
+                                .addComponent(jComboBoxISBNExemplar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(cardCadExemplarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabelNumeroExemplar)
+                                .addComponent(lblTitulo1))
+                        .addGap(18, 18, 18)
+                        .addGroup(cardCadExemplarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabelAutor1)
+                                .addComponent(jTextFieldPrecoExemplar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
+                        .addComponent(btnCadPubl1)
+                        .addContainerGap())
         );
 
         cardPublicacao.add(cardCadExemplar, "FORM_PANEL");
@@ -493,31 +490,31 @@ public class Principal extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanelPublicacaoLayout = new javax.swing.GroupLayout(jPanelPublicacao);
         jPanelPublicacao.setLayout(jPanelPublicacaoLayout);
         jPanelPublicacaoLayout.setHorizontalGroup(
-            jPanelPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelPublicacaoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cardPublicacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanelPublicacaoLayout.createSequentialGroup()
-                        .addComponent(btnCadPublicacao, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnConsPublicacao, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnCadExemplar, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                jPanelPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelPublicacaoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanelPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(cardPublicacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanelPublicacaoLayout.createSequentialGroup()
+                                        .addComponent(btnCadPublicacao, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnConsPublicacao, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnCadExemplar, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
         );
         jPanelPublicacaoLayout.setVerticalGroup(
-            jPanelPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelPublicacaoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCadPublicacao)
-                    .addComponent(btnConsPublicacao)
-                    .addComponent(btnCadExemplar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cardPublicacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                jPanelPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelPublicacaoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanelPublicacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btnCadPublicacao)
+                                .addComponent(btnConsPublicacao)
+                                .addComponent(btnCadExemplar))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cardPublicacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
         );
 
         jTabbedPanePrincipal.addTab("Publicações", jPanelPublicacao);
@@ -549,7 +546,14 @@ public class Principal extends javax.swing.JFrame {
         jLabelAutor2.setText("Data");
 
         btnCadEmprestimo.setText("Cadastrar");
+        
 
+        btnCadEmprestimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCadEmprestimoActionPerformed(evt);
+            }
+
+        });
         try {
             jFormattedDataEmprestimo.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
@@ -562,62 +566,62 @@ public class Principal extends javax.swing.JFrame {
         javax.swing.GroupLayout cardCadEmprestimoLayout = new javax.swing.GroupLayout(cardCadEmprestimo);
         cardCadEmprestimo.setLayout(cardCadEmprestimoLayout);
         cardCadEmprestimoLayout.setHorizontalGroup(
-            cardCadEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cardCadEmprestimoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(cardCadEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(cardCadEmprestimoLayout.createSequentialGroup()
-                        .addGroup(cardCadEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(cardCadEmprestimoLayout.createSequentialGroup()
-                                .addComponent(lblTitulo2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                                .addComponent(jComboBoxNumeroExEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(cardCadEmprestimoLayout.createSequentialGroup()
-                                .addComponent(lblISBN2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jComboBoxISBNEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(cardCadEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                cardCadEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(cardCadEmprestimoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(cardCadEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(cardCadEmprestimoLayout.createSequentialGroup()
-                                    .addComponent(jLabelAutor2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jFormattedDataEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(cardCadEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addGroup(cardCadEmprestimoLayout.createSequentialGroup()
+                                                        .addComponent(lblTitulo2)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                                                        .addComponent(jComboBoxNumeroExEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(cardCadEmprestimoLayout.createSequentialGroup()
+                                                        .addComponent(lblISBN2)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jComboBoxISBNEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(cardCadEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                        .addGroup(cardCadEmprestimoLayout.createSequentialGroup()
+                                                                .addComponent(jLabelAutor2)
+                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                                .addComponent(jFormattedDataEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(cardCadEmprestimoLayout.createSequentialGroup()
+                                                                .addComponent(jLabellEditora2)
+                                                                .addGap(18, 18, 18)
+                                                                .addComponent(jComboBoxAssociadoEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addContainerGap(226, Short.MAX_VALUE))
                                 .addGroup(cardCadEmprestimoLayout.createSequentialGroup()
-                                    .addComponent(jLabellEditora2)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(jComboBoxAssociadoEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(226, Short.MAX_VALUE))
-                    .addGroup(cardCadEmprestimoLayout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardCadEmprestimoLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCadEmprestimo)
-                .addContainerGap())
+                                        .addComponent(jLabel9)
+                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardCadEmprestimoLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnCadEmprestimo)
+                        .addContainerGap())
         );
         cardCadEmprestimoLayout.setVerticalGroup(
-            cardCadEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cardCadEmprestimoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel9)
-                .addGap(18, 18, 18)
-                .addGroup(cardCadEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblISBN2)
-                    .addComponent(jComboBoxISBNEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(cardCadEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTitulo2)
-                    .addComponent(jComboBoxNumeroExEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(cardCadEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelAutor2)
-                    .addComponent(jFormattedDataEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(cardCadEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabellEditora2)
-                    .addComponent(jComboBoxAssociadoEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
-                .addComponent(btnCadEmprestimo)
-                .addContainerGap())
+                cardCadEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(cardCadEmprestimoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel9)
+                        .addGap(18, 18, 18)
+                        .addGroup(cardCadEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblISBN2)
+                                .addComponent(jComboBoxISBNEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(cardCadEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lblTitulo2)
+                                .addComponent(jComboBoxNumeroExEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(cardCadEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabelAutor2)
+                                .addComponent(jFormattedDataEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(cardCadEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabellEditora2)
+                                .addComponent(jComboBoxAssociadoEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 125, Short.MAX_VALUE)
+                        .addComponent(btnCadEmprestimo)
+                        .addContainerGap())
         );
 
         cardEmprestimo.add(cardCadEmprestimo, "FORM_PANEL");
@@ -639,33 +643,33 @@ public class Principal extends javax.swing.JFrame {
         javax.swing.GroupLayout cardCadDevolucaoLayout = new javax.swing.GroupLayout(cardCadDevolucao);
         cardCadDevolucao.setLayout(cardCadDevolucaoLayout);
         cardCadDevolucaoLayout.setHorizontalGroup(
-            cardCadDevolucaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cardCadDevolucaoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(cardCadDevolucaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardCadDevolucaoLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnConsultaDevol))
-                    .addGroup(cardCadDevolucaoLayout.createSequentialGroup()
+                cardCadDevolucaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(cardCadDevolucaoLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(cardCadDevolucaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabelTitDevolucao))
-                        .addGap(0, 289, Short.MAX_VALUE))
-                    .addComponent(jComboBoxNumeroExDevolucao, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardCadDevolucaoLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(btnConsultaDevol))
+                                .addGroup(cardCadDevolucaoLayout.createSequentialGroup()
+                                        .addGroup(cardCadDevolucaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel10)
+                                                .addComponent(jLabelTitDevolucao))
+                                        .addGap(0, 289, Short.MAX_VALUE))
+                                .addComponent(jComboBoxNumeroExDevolucao, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
         );
         cardCadDevolucaoLayout.setVerticalGroup(
-            cardCadDevolucaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cardCadDevolucaoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel10)
-                .addGap(18, 18, 18)
-                .addComponent(jLabelTitDevolucao)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBoxNumeroExDevolucao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
-                .addComponent(btnConsultaDevol)
-                .addContainerGap())
+                cardCadDevolucaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(cardCadDevolucaoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel10)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelTitDevolucao)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jComboBoxNumeroExDevolucao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 214, Short.MAX_VALUE)
+                        .addComponent(btnConsultaDevol)
+                        .addContainerGap())
         );
 
         cardEmprestimo.add(cardCadDevolucao, "SHOW_PANEL");
@@ -707,91 +711,91 @@ public class Principal extends javax.swing.JFrame {
         javax.swing.GroupLayout cardCadDevResultadoLayout = new javax.swing.GroupLayout(cardCadDevResultado);
         cardCadDevResultado.setLayout(cardCadDevResultadoLayout);
         cardCadDevResultadoLayout.setHorizontalGroup(
-            cardCadDevResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardCadDevResultadoLayout.createSequentialGroup()
-                .addGroup(cardCadDevResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(cardCadDevResultadoLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButtonConfirmDevolucao))
-                    .addGroup(cardCadDevResultadoLayout.createSequentialGroup()
-                        .addContainerGap()
+                cardCadDevResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardCadDevResultadoLayout.createSequentialGroup()
                         .addGroup(cardCadDevResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jSeparator5)
-                            .addComponent(jSeparator2)
-                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cardCadDevResultadoLayout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel2))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cardCadDevResultadoLayout.createSequentialGroup()
-                                .addComponent(jLabelResDevExemplar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelResDevExemplarNumero))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cardCadDevResultadoLayout.createSequentialGroup()
-                                .addComponent(jLabelDataEmprestimo)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelDtEmprestimo))
-                            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cardCadDevResultadoLayout.createSequentialGroup()
-                                .addComponent(jLabelDataDevolucao)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelDtDevolucao))
-                            .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cardCadDevResultadoLayout.createSequentialGroup()
-                                .addComponent(jLabelDiasAtraso)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelTotalAtraso))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cardCadDevResultadoLayout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addGap(0, 266, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cardCadDevResultadoLayout.createSequentialGroup()
-                                .addComponent(jLabelMulta)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabelVlMulta)))))
-                .addContainerGap())
+                                .addGroup(cardCadDevResultadoLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(jButtonConfirmDevolucao))
+                                .addGroup(cardCadDevResultadoLayout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addGroup(cardCadDevResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(jSeparator5)
+                                                .addComponent(jSeparator2)
+                                                .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cardCadDevResultadoLayout.createSequentialGroup()
+                                                        .addComponent(jLabel1)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jLabel2))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cardCadDevResultadoLayout.createSequentialGroup()
+                                                        .addComponent(jLabelResDevExemplar)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jLabelResDevExemplarNumero))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cardCadDevResultadoLayout.createSequentialGroup()
+                                                        .addComponent(jLabelDataEmprestimo)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jLabelDtEmprestimo))
+                                                .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cardCadDevResultadoLayout.createSequentialGroup()
+                                                        .addComponent(jLabelDataDevolucao)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jLabelDtDevolucao))
+                                                .addComponent(jSeparator4, javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cardCadDevResultadoLayout.createSequentialGroup()
+                                                        .addComponent(jLabelDiasAtraso)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jLabelTotalAtraso))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cardCadDevResultadoLayout.createSequentialGroup()
+                                                        .addComponent(jLabel11)
+                                                        .addGap(0, 266, Short.MAX_VALUE))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, cardCadDevResultadoLayout.createSequentialGroup()
+                                                        .addComponent(jLabelMulta)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jLabelVlMulta)))))
+                        .addContainerGap())
         );
         cardCadDevResultadoLayout.setVerticalGroup(
-            cardCadDevResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cardCadDevResultadoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel11)
-                .addGap(18, 18, 18)
-                .addGroup(cardCadDevResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(2, 2, 2)
-                .addGroup(cardCadDevResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelResDevExemplar)
-                    .addComponent(jLabelResDevExemplarNumero))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cardCadDevResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelDtEmprestimo)
-                    .addComponent(jLabelDataEmprestimo))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cardCadDevResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelDataDevolucao)
-                    .addComponent(jLabelDtDevolucao))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cardCadDevResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelDiasAtraso)
-                    .addComponent(jLabelTotalAtraso))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(cardCadDevResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelMulta)
-                    .addComponent(jLabelVlMulta))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                .addComponent(jButtonConfirmDevolucao)
-                .addContainerGap())
+                cardCadDevResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(cardCadDevResultadoLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel11)
+                        .addGap(18, 18, 18)
+                        .addGroup(cardCadDevResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel1)
+                                .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)
+                        .addGroup(cardCadDevResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabelResDevExemplar)
+                                .addComponent(jLabelResDevExemplarNumero))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(cardCadDevResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabelDtEmprestimo)
+                                .addComponent(jLabelDataEmprestimo))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(cardCadDevResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabelDataDevolucao)
+                                .addComponent(jLabelDtDevolucao))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(cardCadDevResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabelDiasAtraso)
+                                .addComponent(jLabelTotalAtraso))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(cardCadDevResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabelMulta)
+                                .addComponent(jLabelVlMulta))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                        .addComponent(jButtonConfirmDevolucao)
+                        .addContainerGap())
         );
 
         cardEmprestimo.add(cardCadDevResultado, "SHOW_PANEL");
@@ -799,32 +803,32 @@ public class Principal extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanelEmprestimoLayout = new javax.swing.GroupLayout(jPanelEmprestimo);
         jPanelEmprestimo.setLayout(jPanelEmprestimoLayout);
         jPanelEmprestimoLayout.setHorizontalGroup(
-            jPanelEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelEmprestimoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnDevolucao, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(221, Short.MAX_VALUE))
-            .addGroup(jPanelEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                jPanelEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelEmprestimoLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(cardEmprestimo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                        .addContainerGap()
+                        .addComponent(btnEmprestimo, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnDevolucao, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(221, Short.MAX_VALUE))
+                .addGroup(jPanelEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelEmprestimoLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(cardEmprestimo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap()))
         );
         jPanelEmprestimoLayout.setVerticalGroup(
-            jPanelEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelEmprestimoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnEmprestimo)
-                    .addComponent(btnDevolucao))
-                .addContainerGap(369, Short.MAX_VALUE))
-            .addGroup(jPanelEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                jPanelEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanelEmprestimoLayout.createSequentialGroup()
-                    .addGap(42, 42, 42)
-                    .addComponent(cardEmprestimo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                        .addContainerGap()
+                        .addGroup(jPanelEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btnEmprestimo)
+                                .addComponent(btnDevolucao))
+                        .addContainerGap(369, Short.MAX_VALUE))
+                .addGroup(jPanelEmprestimoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelEmprestimoLayout.createSequentialGroup()
+                                .addGap(42, 42, 42)
+                                .addComponent(cardEmprestimo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap()))
         );
 
         jTabbedPanePrincipal.addTab("Empréstimos", jPanelEmprestimo);
@@ -843,28 +847,28 @@ public class Principal extends javax.swing.JFrame {
         javax.swing.GroupLayout jPanelRelatorioLayout = new javax.swing.GroupLayout(jPanelRelatorio);
         jPanelRelatorio.setLayout(jPanelRelatorioLayout);
         jPanelRelatorioLayout.setHorizontalGroup(
-            jPanelRelatorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRelatorioLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanelRelatorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelRelatorio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanelRelatorioLayout.createSequentialGroup()
+                jPanelRelatorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelRelatorioLayout.createSequentialGroup()
+                        .addContainerGap()
                         .addGroup(jPanelRelatorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jButtonRelatorio))
-                        .addGap(0, 330, Short.MAX_VALUE)))
-                .addContainerGap())
+                                .addComponent(jLabelRelatorio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanelRelatorioLayout.createSequentialGroup()
+                                        .addGroup(jPanelRelatorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel3)
+                                                .addComponent(jButtonRelatorio))
+                                        .addGap(0, 330, Short.MAX_VALUE)))
+                        .addContainerGap())
         );
         jPanelRelatorioLayout.setVerticalGroup(
-            jPanelRelatorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelRelatorioLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonRelatorio)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                jPanelRelatorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanelRelatorioLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonRelatorio)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabelRelatorio, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
         );
 
         jTabbedPanePrincipal.addTab("Relatório", jPanelRelatorio);
@@ -872,24 +876,23 @@ public class Principal extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPanePrincipal)
-                .addContainerGap())
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jTabbedPanePrincipal)
+                        .addContainerGap())
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jTabbedPanePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jTabbedPanePrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, 437, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }
 
-    
     //-----------------------------------------------------------------------//
     //CADASTROS
     //-----------------------------------------------------------------------//
@@ -909,7 +912,7 @@ public class Principal extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "Associado cadastrado com sucesso!");
     }
 
-    private void btnCadPubActionPerformed(ActionEvent evt) {
+    private void btnCadPublActionPerformed(ActionEvent evt) {
         //Salvando Publicacao
         OBJPublicacao = new EntPublicacao(Integer.parseInt(jTextFieldISBN.getText()), jTextFieldTitulo.getText(), jTextFieldAutor.getText(), jTextFieldEditora.getText());
         ctrPubli.CadastrarPublicacao(OBJPublicacao.getISBN(), OBJPublicacao.getTitulo(), OBJPublicacao.getAutor(), OBJPublicacao.getEditora());
@@ -922,21 +925,23 @@ public class Principal extends javax.swing.JFrame {
         jTextFieldEditora.setText("");
         //Validação
         JOptionPane.showMessageDialog(null, "Publicação cadastrada com sucesso!");
-    
+
         //Atualizar os Exemplares em potencial
         jComboBoxISBNConsultar.setModel(new javax.swing.DefaultComboBoxModel(ctrPubli.ListaISBNPublicacaos()));
         jComboBoxISBNConsultar.setToolTipText("");
         jComboBoxISBNExemplar.setModel(new javax.swing.DefaultComboBoxModel(ctrPubli.ListaISBNPublicacaos()));
         jComboBoxISBNExemplar.setToolTipText("");
-        
+    }
     
+    private void jComboBoxStatusActionPerformed(ActionEvent evt) {
+        //Gerar o código do ultimo + 1.
     }
 
     private void CadExemplarYSalvarActionPerformed(ActionEvent evt) {
         //Salvando Exemplar
         String isbn = (String) jComboBoxISBNExemplar.getSelectedItem();
         isbn = isbn.substring(0, isbn.indexOf(" -"));
-        
+
         int isbnexem = Integer.parseInt(isbn);
         OBJExemplar = new EntExemplar(Integer.parseInt(jLabelNumeroExemplar.getText()), isbnexem, Float.parseFloat(jTextFieldPrecoExemplar.getText()), false);
         ctrExem.CadastrarExemplar(OBJExemplar.getNumero(), OBJExemplar.getISBN(), OBJExemplar.getPreco(), false);
@@ -948,14 +953,31 @@ public class Principal extends javax.swing.JFrame {
         //Validação
         JOptionPane.showMessageDialog(null, "Exemplar cadastrado com sucesso!");
     }
-    
-    
+
+    private void btnCadEmprestimoActionPerformed(ActionEvent evt) {
+        //Salvando Exemplar
+        String isbn = (String) jComboBoxISBNExemplar.getSelectedItem();
+        isbn = isbn.substring(0, isbn.indexOf(" -"));
+
+        int isbnexem = Integer.parseInt(isbn);
+        OBJExemplar = new EntExemplar(Integer.parseInt(jLabelNumeroExemplar.getText()), isbnexem, Float.parseFloat(jTextFieldPrecoExemplar.getText()), false);
+        ctrExem.CadastrarExemplar(OBJExemplar.getNumero(), OBJExemplar.getISBN(), OBJExemplar.getPreco(), false);
+        //Listando para controle meu :)
+        System.out.println(ctrExem.ListaExemplars());
+        //Limpando campos 
+        jComboBoxISBNExemplar.setSelectedIndex(0);
+        jTextFieldPrecoExemplar.setText("");
+        //Validação
+        JOptionPane.showMessageDialog(null, "Exemplar cadastrado com sucesso!");
+    }
+
     //-----------------------------------------------------------------------//
     //RELATORIO
     //-----------------------------------------------------------------------//
-     private void jButtonRelatorioActionPerformed(ActionEvent evt) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
+    private void jButtonRelatorioActionPerformed(ActionEvent evt) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     //-----------------------------------------------------------------------//
     //CONTROLADOR DE LAYOUT
     //-----------------------------------------------------------------------//
@@ -966,7 +988,6 @@ public class Principal extends javax.swing.JFrame {
         cardConsPublResultado.setVisible(false);
         cardCadPublicacao.setVisible(true);
 
-        
     }
 
     private void btnConsPublicacaoActionPerformed(java.awt.event.ActionEvent evt) {
@@ -985,13 +1006,12 @@ public class Principal extends javax.swing.JFrame {
     }
 
     private void btnConsultaPublActionPerformed(java.awt.event.ActionEvent evt) {
-        
+
         String isbn = (String) jComboBoxISBNConsultar.getSelectedItem();
         isbn = isbn.substring(0, isbn.indexOf(" -"));
         int isbnexem = Integer.parseInt(isbn);
         jLabelExemplaresEmprestadoseNaoEmprestados.setText(ctrExem.ListaExemplarsISBNEmprestadosENaoEmprestados(isbnexem));
-        
-        
+
         cardCadExemplar.setVisible(false);
         cardConsPublicacao.setVisible(false);
         cardCadPublicacao.setVisible(false);
