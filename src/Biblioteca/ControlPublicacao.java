@@ -1,3 +1,5 @@
+package Biblioteca;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -13,6 +15,7 @@ public class ControlPublicacao {
     private Vector vecPublicacaos = new Vector();
    
     private final String arquivo = "publicacao.dat";
+    
     
     
     public ControlPublicacao() throws Exception {

@@ -1,3 +1,5 @@
+package Biblioteca;
+
 
 import java.io.Serializable;
 import java.util.Date;
@@ -35,18 +37,13 @@ public class EntEmprestimo  implements Serializable{
     public void setNumexemplar(int numexemplar) {
         this.numexemplar = numexemplar;
     }
-
     public void setISBN(int ISBN) {
         this.ISBN = ISBN;
     }
-
     public void setDataemprestimo(Date dataemprestimo) {
         this.dataemprestimo = dataemprestimo;
     }
-
     public void setCodassociado(int codassociado) {
         this.codassociado = codassociado;
     }
-    
-    
 }
