@@ -2,6 +2,11 @@ package Biblioteca;
 
 import java.awt.CardLayout;
 import java.awt.event.ActionEvent;
+import static java.lang.String.format;
+import static java.lang.String.format;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -13,16 +18,19 @@ public class Principal extends javax.swing.JFrame {
     ControlAssociado ctrAsso;
     ControlPublicacao ctrPubli;
     ControlExemplar ctrExem;
-
+    ControlEmprestimo ctrEmpres;
+    
     EntAssociado OBJAssociado;
     EntPublicacao OBJPublicacao;
     EntExemplar OBJExemplar;
+    EntEmprestimo OBJEmprestimo;
 
     public Principal() {
         try {
             ctrAsso = new ControlAssociado();
             ctrPubli = new ControlPublicacao();
             ctrExem = new ControlExemplar();
+            ctrEmpres = new ControlEmprestimo();
         } catch (Exception ex) {
 
             System.out.println("Não deu certo o controladores: " + ex);
@@ -547,7 +555,7 @@ public class Principal extends javax.swing.JFrame {
 
         lblISBN2.setText("ISBN");
 
-        lblTitulo2.setText("Título");
+        lblTitulo2.setText("Nº publicação");
 
         jLabelAutor2.setText("Data");
 
@@ -568,6 +576,20 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
         jLabel9.setText("Empréstimo de exemplar");
+        
+        
+        jComboBoxISBNEmprestimo.setModel(new javax.swing.DefaultComboBoxModel(ctrPubli.ListaISBNPublicacaos()));
+        jComboBoxISBNEmprestimo.setToolTipText("");
+        jComboBoxISBNEmprestimo.setSelectedIndex(0);
+        jComboBoxISBNEmprestimo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxISBNEmprestimoActionPerformed(evt);
+            }
+
+        });
+        jComboBoxAssociadoEmprestimo.setModel(new javax.swing.DefaultComboBoxModel(ctrAsso.ListaCodeAssociado()));
+        jComboBoxAssociadoEmprestimo.setToolTipText("");
+        jComboBoxAssociadoEmprestimo.setSelectedIndex(0);
 
         javax.swing.GroupLayout cardCadEmprestimoLayout = new javax.swing.GroupLayout(cardCadEmprestimo);
         cardCadEmprestimo.setLayout(cardCadEmprestimoLayout);
@@ -916,6 +938,14 @@ public class Principal extends javax.swing.JFrame {
         jTextFieldEmail.setText("");
         //Confirmação
         JOptionPane.showMessageDialog(null, "Associado cadastrado com sucesso!");
+        //atualização
+        jComboBoxAssociadoEmprestimo.setModel(new javax.swing.DefaultComboBoxModel(ctrAsso.ListaCodeAssociado()));
+        jComboBoxAssociadoEmprestimo.setToolTipText("");
+        jComboBoxAssociadoEmprestimo.setSelectedIndex(0);
+        
+        
+        
+        
     }
 
     private void btnCadPublActionPerformed(ActionEvent evt) {
@@ -937,6 +967,9 @@ public class Principal extends javax.swing.JFrame {
         jComboBoxISBNConsultar.setToolTipText("");
         jComboBoxISBNExemplar.setModel(new javax.swing.DefaultComboBoxModel(ctrPubli.ListaISBNPublicacaos()));
         jComboBoxISBNExemplar.setToolTipText("");
+        jComboBoxISBNEmprestimo.setModel(new javax.swing.DefaultComboBoxModel(ctrPubli.ListaISBNPublicacaos()));
+        jComboBoxISBNEmprestimo.setToolTipText("");
+
     }
     
     private void jComboBoxISBNExemplarActionPerformed(ActionEvent evt) {
@@ -947,6 +980,17 @@ public class Principal extends javax.swing.JFrame {
         int isbnexem = Integer.parseInt(isbn);
         jLabelNumeroExemplar.setText(""+ctrExem.UltimoExemplars(isbnexem));
         
+    }
+   
+    private void jComboBoxISBNEmprestimoActionPerformed(ActionEvent evt) {
+        
+        String isbn = (String) jComboBoxISBNEmprestimo.getSelectedItem();
+        isbn = isbn.substring(0, isbn.indexOf(" -"));
+
+        int isbnexem = Integer.parseInt(isbn);
+        jComboBoxNumeroExEmprestimo.setModel(new javax.swing.DefaultComboBoxModel(ctrExem.ListaExemplaresporISBN(isbnexem)));
+        jComboBoxNumeroExEmprestimo.setToolTipText("");
+        jComboBoxNumeroExEmprestimo.setSelectedIndex(0);
     }
 
     private void CadExemplarYSalvarActionPerformed(ActionEvent evt) {
@@ -967,20 +1011,40 @@ public class Principal extends javax.swing.JFrame {
     }
 
     private void btnCadEmprestimoActionPerformed(ActionEvent evt) {
-        //Salvando Exemplar
-        String isbn = (String) jComboBoxISBNExemplar.getSelectedItem();
+        //Salvando Emprestimo
+        String isbn = (String) jComboBoxISBNEmprestimo.getSelectedItem();
         isbn = isbn.substring(0, isbn.indexOf(" -"));
-
         int isbnexem = Integer.parseInt(isbn);
-        OBJExemplar = new EntExemplar(Integer.parseInt(jLabelNumeroExemplar.getText()), isbnexem, Float.parseFloat(jTextFieldPrecoExemplar.getText()), false);
-        ctrExem.CadastrarExemplar(OBJExemplar.getNumero(), OBJExemplar.getISBN(), OBJExemplar.getPreco(), false);
+        
+        isbn = (String) jComboBoxAssociadoEmprestimo.getSelectedItem();
+        isbn = isbn.substring(0, isbn.indexOf(" -"));
+        
+        int isAsso = Integer.parseInt(isbn);
+        
+        int Exemp = Integer.parseInt((String) jComboBoxNumeroExEmprestimo.getSelectedItem());
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+        
+        Date dateemprestimo = null;//new Date(jFormattedDataEmprestimo.getText());
+        
+        try {
+            dateemprestimo = new java.sql.Date(format.parse(jFormattedDataEmprestimo.getText()).getTime());
+        } catch (ParseException ex) {Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);}
+        
+        OBJEmprestimo = new EntEmprestimo(Exemp, isbnexem, dateemprestimo, isAsso);
+        ctrEmpres.CadastrarEmprestimo(OBJEmprestimo.getNumexemplar(), OBJEmprestimo.getISBN(), OBJEmprestimo.getDataemprestimo(), OBJEmprestimo.getCodassociado());
+        
         //Listando para controle meu :)
-        System.out.println(ctrExem.ListaExemplars());
+        System.out.println(ctrEmpres.ListaEmprestimos());
         //Limpando campos 
-        jComboBoxISBNExemplar.setSelectedIndex(0);
-        jTextFieldPrecoExemplar.setText("");
+        jComboBoxISBNEmprestimo.setSelectedIndex(0);
+        jComboBoxAssociadoEmprestimo.setSelectedIndex(0);
+        jComboBoxNumeroExEmprestimo.setSelectedIndex(0);
+                
+        jFormattedDataEmprestimo.setText("");
+        
+        //alterar Exemplar
         //Validação
-        JOptionPane.showMessageDialog(null, "Exemplar cadastrado com sucesso!");
+        JOptionPane.showMessageDialog(null, "Emprestimo realizado com sucesso!");
     }
 
     //-----------------------------------------------------------------------//

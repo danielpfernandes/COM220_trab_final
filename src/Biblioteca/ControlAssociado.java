@@ -87,8 +87,15 @@ public class ControlAssociado {
             return result;
         }
     }
-//Método para obtenção de uma disciplina
-
+    public String[] ListaCodeAssociado() {
+        String vecAsso[] = new String[vecAssociados.size()];
+        EntAssociado objAssociado = null;
+        for (int intIdx = 0; intIdx < vecAssociados.size(); intIdx++) {
+            objAssociado = (EntAssociado) vecAssociados.elementAt(intIdx);
+            vecAsso[intIdx] = ""+objAssociado.getCodigo() +" - "+objAssociado.getNome();
+        }
+        return vecAsso;
+    }
     public String getAssociado(int pCodigo) {
         EntAssociado objAssociado = null;
         for (int intIdx = 0; intIdx < vecAssociados.size(); intIdx++) {

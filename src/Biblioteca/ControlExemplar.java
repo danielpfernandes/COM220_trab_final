@@ -88,6 +88,21 @@ public class ControlExemplar {
         }
     }
 
+    public String[] ListaExemplaresporISBN(int ISBN) {
+        int c = 0;
+        EntExemplar objExemplar = null;
+        String vecISBNexemplar[] = new String[UltimoExemplars(ISBN) - 1];
+        for (int intIdx = 0; intIdx < vecExemplars.size(); intIdx++) {
+            objExemplar = (EntExemplar) vecExemplars.elementAt(intIdx);
+            if (objExemplar.getISBN() == ISBN) {
+                int a= c+1;
+                vecISBNexemplar[c] = "" + a;
+                c++;
+            }
+        }
+        return vecISBNexemplar;
+    }
+
     public int UltimoExemplars(int ISBN) {
         EntExemplar objExemplar = null;
         int cont = 1;
@@ -102,7 +117,7 @@ public class ControlExemplar {
 
     public String ListaExemplarsISBNEmprestadosENaoEmprestados(int ISBN) {
         EntExemplar objExemplar = null;
-        String emprestados = "<html>"+ctrPubli.getPublicacao(ISBN)+"<br>";
+        String emprestados = "<html>" + ctrPubli.getPublicacao(ISBN) + "<br>";
 
         String sim = "", nao = "";
         for (int intIdx = 0; intIdx < vecExemplars.size(); intIdx++) {
@@ -115,18 +130,17 @@ public class ControlExemplar {
                 }
             }
         }
-        if(sim.equals("") && nao.equals("")){
-             emprestados += "<br>Essa publicação não possui exemplares cadastrados!<br>";
-        }
-        else if (sim.equals("")){
+        if (sim.equals("") && nao.equals("")) {
+            emprestados += "<br>Essa publicação não possui exemplares cadastrados!<br>";
+        } else if (sim.equals("")) {
             emprestados += "\n<br><br>DISPONÍVEIS: \n" + nao;
-        } else if (nao.equals("")){
+        } else if (nao.equals("")) {
             emprestados += "\n<br><br>EMPRESTADOS: \n" + sim;
-        }else{
-            emprestados += "\n<br><br>DISPONÍVEIS: \n" + nao +  "\n<br><br>EMPRESTADOS: \n" + sim;
+        } else {
+            emprestados += "\n<br><br>DISPONÍVEIS: \n" + nao + "\n<br><br>EMPRESTADOS: \n" + sim;
         }
 
-        return emprestados+"</html>";
+        return emprestados + "</html>";
     }
 
     public String getExemplar(int pISBN, int pNumero) {
